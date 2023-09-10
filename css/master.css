@@ -8,11 +8,46 @@ body {
   /* font-family: "Cairo", sans-serif; */
   font-family: "Open Sans", sans-serif;
 }
+/* Start Settings Box */
+.settings-box {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  background-color: white;
+  width: 200px;
+  min-height: 100vh;
+  z-index: 10;
+  transition: left 0.3s;
+  -webkit-transition: left 0.3s;
+  -moz-transition: left 0.3s;
+  -ms-transition: left 0.3s;
+  -o-transition: left 0.3s;
+}
+.settings-box.open {
+  left: 0;
+}
+.settings-box .set-icon {
+  position: absolute;
+  right: -40px;
+  top: 100px;
+  background-color: white;
+  padding: 8px;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+/* End Settings Box */
 /* Start Landing Page */
 .landing-page {
+  position: relative;
   min-height: 100vh;
   background-image: url(../imgs/01.jpg);
   background-size: cover;
+  transition: background-image 1s;
+  -webkit-transition: background-image 1s;
+  -moz-transition: background-image 1s;
+  -ms-transition: background-image 1s;
+  -o-transition: background-image 1s;
 }
 .landing-page .overlay {
   background-color: rgba(0, 0, 0, 0.5);
