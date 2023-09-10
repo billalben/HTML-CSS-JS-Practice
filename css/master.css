@@ -26,15 +26,22 @@ body {
 .settings-box.open {
   left: 0;
 }
-.settings-box .set-icon {
+.settings-box .toggle-settings {
   position: absolute;
   right: -40px;
   top: 100px;
   background-color: white;
-  padding: 8px;
-  width: 40px;
   text-align: center;
   cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -ms-border-radius: 0 5px 5px 0;
+  -o-border-radius: 0 5px 5px 0;
+}
+.settings-box .toggle-settings i {
+  padding: 8px;
+  width: 40px;
 }
 /* End Settings Box */
 /* Start Landing Page */

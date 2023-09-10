@@ -1,3 +1,12 @@
+// Toggle Spin Class On Icon
+document.querySelector(".toggle-settings i").onclick = function () {
+  this.classList.toggle("fa-spin");
+
+  document.querySelector(".settings-box").classList.toggle("open");
+
+}
+
+// Select Landing Page Element
 let landingPage = document.querySelector(".landing-page");
 
 let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
