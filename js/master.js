@@ -3,8 +3,25 @@ document.querySelector(".toggle-settings i").onclick = function () {
   this.classList.toggle("fa-spin");
 
   document.querySelector(".settings-box").classList.toggle("open");
+};
 
-}
+// Switch Colors
+const colorsList = document.querySelectorAll(".colors-list li");
+
+colorsList.forEach((li) => {
+  li.addEventListener("click", function (e) {
+    document.documentElement.style.setProperty(
+      "--main-color",
+      e.target.dataset.color
+    );
+
+    colorsList.forEach((li) => {
+      li.classList.remove("active")
+    });
+
+    this.classList.add("active")
+  });
+});
 
 // Select Landing Page Element
 let landingPage = document.querySelector(".landing-page");
