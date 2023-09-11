@@ -14,6 +14,9 @@ if (mainColor !== null) {
   });
 }
 
+let backgroundOption = true;
+let backgroundInterval;
+
 // Toggle Spin Class On Icon
 document.querySelector(".toggle-settings i").onclick = function () {
   this.classList.toggle("fa-spin");
@@ -58,13 +61,14 @@ colorsList.forEach((li) => {
 });
 
 // Switch Background Option
-const BackgroundsElement = document.querySelectorAll(".background-changes span");
+const BackgroundsElement = document.querySelectorAll(
+  ".background-changes span"
+);
 
 BackgroundsElement.forEach((span) => {
   span.addEventListener("click", function (e) {
-
     BackgroundsElement.forEach((span) => {
-        span.classList.remove("active");
+      span.classList.remove("active");
     });
 
     this.classList.add("active");
@@ -74,6 +78,14 @@ BackgroundsElement.forEach((span) => {
     // });
 
     // e.target.classList.add("active");
+
+    if (e.target.dataset.background === "yes") {
+      backgroundOption = true;
+      randomizeImgs();
+    } else {
+      backgroundOption = false;
+      clearInterval(backgroundInterval);
+    }
   });
 });
 
@@ -82,14 +94,13 @@ let landingPage = document.querySelector(".landing-page");
 
 let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 
-// setInterval(function () {
-//   let randomNum = Math.trunc(Math.random() * imgsArray.length);
-//   landingPage.style.backgroundImage = `url("../imgs/${imgsArray[randomNum]}")`;
-// }, 10000);
-
-let length = 0;
-let ChangeBackground = setInterval(function () {
-  landingPage.style.backgroundImage = `url("../imgs/${imgsArray[length]}")`;
-  length++;
-  if (length === imgsArray.length) length = 0;
-}, 10000);
+function randomizeImgs() {
+  if (backgroundOption) {
+    let length = 0;
+    backgroundInterval = setInterval(function () {
+      landingPage.style.backgroundImage = `url("../imgs/${imgsArray[length]}")`;
+      length++;
+      if (length === imgsArray.length) length = 0;
+    }, 2000);
+  }
+}
