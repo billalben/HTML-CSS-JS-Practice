@@ -45,7 +45,7 @@ body {
 }
 .settings-box .settings-container .option-box {
   padding: 10px;
-  margin: 40px 10px 0px;
+  margin: 30px 10px 0px;
   background-color: #eee;
   text-align: center;
 }
@@ -87,6 +87,27 @@ body {
 }
 .settings-box .settings-container .option-box .colors-list li:nth-child(5) {
   background-color: #4caf50;
+}
+.settings-box .settings-container .option-box .yes,
+.settings-box .settings-container .option-box .no {
+  background-color: #009688;
+  color: #fff;
+  width: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 0px;
+  margin-top: 15px;
+  display: inline-block;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.settings-box .settings-container .background-changes span.active {
+  opacity: 1;
 }
 /* End Settings Box */
 /* Start Landing Page */

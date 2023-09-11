@@ -57,6 +57,26 @@ colorsList.forEach((li) => {
   });
 });
 
+// Switch Background Option
+const BackgroundsElement = document.querySelectorAll(".background-changes span");
+
+BackgroundsElement.forEach((span) => {
+  span.addEventListener("click", function (e) {
+
+    BackgroundsElement.forEach((span) => {
+        span.classList.remove("active");
+    });
+
+    this.classList.add("active");
+
+    // e.target.parentElement.querySelectorAll(".active").forEach((span) => {
+    //   span.classList.remove("active");
+    // });
+
+    // e.target.classList.add("active");
+  });
+});
+
 // Select Landing Page Element
 let landingPage = document.querySelector(".landing-page");
 
