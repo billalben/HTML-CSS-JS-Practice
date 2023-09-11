@@ -3,6 +3,15 @@ let mainColor = localStorage.getItem("color-option");
 
 if (mainColor !== null) {
   document.documentElement.style.setProperty("--main-color", mainColor);
+
+  // remove active class
+  document.querySelectorAll(".colors-list li").forEach((element) => {
+    element.classList.remove("active");
+
+    if (element.dataset.color === mainColor) {
+      element.classList.add("active");
+    }
+  });
 }
 
 // Toggle Spin Class On Icon
