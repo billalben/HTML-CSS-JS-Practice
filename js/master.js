@@ -1,3 +1,10 @@
+// check if there is local storage color option
+let mainColor = localStorage.getItem("color-option");
+
+if (mainColor !== null) {
+  document.documentElement.style.setProperty("--main-color", mainColor);
+}
+
 // Toggle Spin Class On Icon
 document.querySelector(".toggle-settings i").onclick = function () {
   this.classList.toggle("fa-spin");
@@ -15,11 +22,29 @@ colorsList.forEach((li) => {
       e.target.dataset.color
     );
 
-    colorsList.forEach((li) => {
-      li.classList.remove("active")
-    });
+    // set color on local storage
+    localStorage.setItem("color-option", e.target.dataset.color);
 
-    this.classList.add("active")
+    // colorsList.forEach((li) => {
+    //   if (li.classList.contains("active")) {
+    //     li.classList.remove("active");
+    //   }
+    // });
+
+    for (const li of colorsList) {
+      if (li.classList.contains("active")) {
+        li.classList.remove("active");
+        break; // This will exit the loop when "active" is found.
+      }
+    }
+
+    this.classList.add("active");
+
+    // e.target.parentElement.querySelectorAll(".active").forEach((ele) => {
+    //   ele.classList.remove("active");
+    // });
+
+    // e.target.classList.add("active");
   });
 });
 
