@@ -17,6 +17,28 @@ if (mainColor !== null) {
 let backgroundOption = true;
 let backgroundInterval;
 
+// check if there is in local storage background item
+let backgroundLocalItem = localStorage.getItem("background-option");
+
+if (backgroundLocalItem !== null) {
+  
+  if (backgroundLocalItem === "true") {
+    backgroundOption = true;
+  } else {
+    backgroundOption = false;
+  }
+  document.querySelectorAll(".background-changes span").forEach(element => {
+    element.classList.remove("active");
+  })
+
+  if (backgroundLocalItem === "true") {
+    document.querySelector(".background-changes .yes").classList.add("active");
+  } else {
+    document.querySelector(".background-changes .no").classList.add("active");
+
+  }
+}
+
 // Toggle Spin Class On Icon
 document.querySelector(".toggle-settings i").onclick = function () {
   this.classList.toggle("fa-spin");
@@ -38,9 +60,7 @@ colorsList.forEach((li) => {
     localStorage.setItem("color-option", e.target.dataset.color);
 
     // colorsList.forEach((li) => {
-    //   if (li.classList.contains("active")) {
     //     li.classList.remove("active");
-    //   }
     // });
 
     for (const li of colorsList) {
@@ -73,18 +93,14 @@ BackgroundsElement.forEach((span) => {
 
     this.classList.add("active");
 
-    // e.target.parentElement.querySelectorAll(".active").forEach((span) => {
-    //   span.classList.remove("active");
-    // });
-
-    // e.target.classList.add("active");
-
     if (e.target.dataset.background === "yes") {
       backgroundOption = true;
       randomizeImgs();
+      localStorage.setItem("background-option", true);
     } else {
       backgroundOption = false;
       clearInterval(backgroundInterval);
+      localStorage.setItem("background-option", false);
     }
   });
 });
@@ -94,6 +110,8 @@ let landingPage = document.querySelector(".landing-page");
 
 let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 
+randomizeImgs();
+
 function randomizeImgs() {
   if (backgroundOption) {
     let length = 0;
@@ -101,6 +119,6 @@ function randomizeImgs() {
       landingPage.style.backgroundImage = `url("../imgs/${imgsArray[length]}")`;
       length++;
       if (length === imgsArray.length) length = 0;
-    }, 2000);
+    }, 10000);
   }
 }
