@@ -132,3 +132,45 @@ window.onscroll = function () {
     });
   }
 };
+
+// Create Popup With The Image
+let ourGallery = document.querySelectorAll(".gallery img");
+
+ourGallery.forEach((img) => {
+  img.addEventListener("click", (e) => {
+    let overlay = document.createElement("div");
+    overlay.classList.add("popup-overlay");
+    document.body.appendChild(overlay);
+
+    let popupBox = document.createElement("div");
+
+    if (img.alt !== null) {
+      let imgHeading = document.createElement("h3");
+      let imgText = document.createTextNode(img.alt);
+      imgHeading.appendChild(imgText);
+
+      popupBox.appendChild(imgHeading);
+    }
+
+    popupBox.classList.add("popup-box");
+    let popupImage = document.createElement("img");
+    popupImage.src = img.src;
+    popupBox.appendChild(popupImage);
+    document.body.appendChild(popupBox);
+
+    let closeButton = document.createElement("span");
+    let closeButtonText = document.createTextNode("X");
+    closeButton.appendChild(closeButtonText);
+    closeButton.classList.add("close-button");
+    popupBox.appendChild(closeButton);
+  });
+});
+
+// Close Popup
+
+document.addEventListener("click", function (e) {
+  if (e.target.className == "close-button") {
+    e.target.parentNode.remove();
+    document.querySelector(".popup-overlay").remove();
+  }
+})
