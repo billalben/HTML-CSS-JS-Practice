@@ -20,6 +20,7 @@ body {
   left: -250px;
   top: 0;
   background-color: white;
+  border-right: 2px solid var(--main-color);
   width: 250px;
   min-height: 100vh;
   z-index: 10;
@@ -34,16 +35,21 @@ body {
 }
 .settings-box .toggle-settings {
   position: absolute;
-  right: -40px;
+  right: -42px;
   top: 100px;
   background-color: white;
   text-align: center;
   cursor: pointer;
-  border-radius: 0 5px 5px 0;
-  -webkit-border-radius: 0 5px 5px 0;
-  -moz-border-radius: 0 5px 5px 0;
-  -ms-border-radius: 0 5px 5px 0;
-  -o-border-radius: 0 5px 5px 0;
+  border-radius: 0 6px 6px 0;
+  -webkit-border-radius: 0 6px 6px 0;
+  -moz-border-radius: 0 6px 6px 0;
+  -ms-border-radius: 0 6px 6px 0;
+  -o-border-radius: 0 6px 6px 0;
+}
+.settings-box.open .toggle-settings {
+  border-bottom: 2px solid var(--main-color);
+  border-top: 2px solid var(--main-color);
+  border-right: 2px solid var(--main-color);
 }
 .settings-box .toggle-settings i {
   padding: 8px;
@@ -54,6 +60,12 @@ body {
   margin: 30px 10px 0px;
   background-color: #eee;
   text-align: center;
+  border: 2px solid var(--main-color);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
 .settings-box .settings-container .option-box h4 {
   margin: 10px 0 0;
@@ -281,3 +293,33 @@ body {
   -o-transition: 1s;
 }
 /* End Skills */
+
+/* Start Gallery */
+.gallery {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.gallery h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+  text-align: center;
+}
+.gallery .images-box {
+  text-align: center;
+}
+.gallery .images-box img {
+  width: 250px;
+  padding: 3px;
+  background-color: #f6f6f6;
+  border: 1px solid var(--main-color);
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+/* End Gallery */
