@@ -272,6 +272,12 @@ body {
   left: 0;
   top: 0;
   height: 100%;
+  width: 0;
   background-color: var(--main-color);
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
 }
 /* End Skills */

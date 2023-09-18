@@ -21,21 +21,19 @@ let backgroundInterval;
 let backgroundLocalItem = localStorage.getItem("background-option");
 
 if (backgroundLocalItem !== null) {
-  
   if (backgroundLocalItem === "true") {
     backgroundOption = true;
   } else {
     backgroundOption = false;
   }
-  document.querySelectorAll(".background-changes span").forEach(element => {
+  document.querySelectorAll(".background-changes span").forEach((element) => {
     element.classList.remove("active");
-  })
+  });
 
   if (backgroundLocalItem === "true") {
     document.querySelector(".background-changes .yes").classList.add("active");
   } else {
     document.querySelector(".background-changes .no").classList.add("active");
-
   }
 }
 
@@ -122,3 +120,15 @@ function randomizeImgs() {
     }, 10000);
   }
 }
+
+// select skills selector
+let ourSkills = document.querySelector(".skills");
+let allSkills = document.querySelectorAll(".skill-box .skill-progress span");
+
+window.onscroll = function () {
+  if (window.scrollY >= ourSkills.offsetTop - 230) {
+    allSkills.forEach((span) => {
+      span.style.width = span.dataset.progress;
+    });
+  }
+};
