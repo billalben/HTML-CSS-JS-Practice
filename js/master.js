@@ -173,4 +173,14 @@ document.addEventListener("click", function (e) {
     e.target.parentNode.remove();
     document.querySelector(".popup-overlay").remove();
   }
-})
+});
+
+// Select All Bullets
+const allBullets = document.querySelectorAll(".nav-bullets .bullet");
+allBullets.forEach((bullet) => {
+  bullet.addEventListener("click", (e) => {
+    document.querySelector(e.target.dataset.section).scrollIntoView({
+      behavior: "smooth",
+    })
+  });
+});
