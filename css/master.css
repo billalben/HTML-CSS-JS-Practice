@@ -4,6 +4,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   /* font-family: "Cairo", sans-serif; */
   font-family: "Open Sans", sans-serif;
@@ -241,7 +244,7 @@ body {
   list-style: none;
   padding: 0;
   width: 100%;
-  text-align: center;
+  text-align: right;
 }
 .landing-page .header-area .links li {
   display: inline-block;
@@ -662,6 +665,11 @@ body {
 .testimonials .testimonials-content .ts-box {
   background-color: white;
   padding: 20px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
 .testimonials .testimonials-content .ts-box > p {
   margin: 0 0 20px;
