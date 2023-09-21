@@ -111,7 +111,7 @@ body {
 }
 .settings-box .settings-container .option-box .yes,
 .settings-box .settings-container .option-box .no {
-  background-color: #009688;
+  background-color: var(--main-color);
   color: #fff;
   width: 50px;
   font-size: 14px;

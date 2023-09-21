@@ -57,24 +57,7 @@ colorsList.forEach((li) => {
     // set color on local storage
     localStorage.setItem("color-option", e.target.dataset.color);
 
-    // colorsList.forEach((li) => {
-    //     li.classList.remove("active");
-    // });
-
-    for (const li of colorsList) {
-      if (li.classList.contains("active")) {
-        li.classList.remove("active");
-        break; // This will exit the loop when "active" is found.
-      }
-    }
-
-    this.classList.add("active");
-
-    // e.target.parentElement.querySelectorAll(".active").forEach((ele) => {
-    //   ele.classList.remove("active");
-    // });
-
-    // e.target.classList.add("active");
+    handleActive(e);
   });
 });
 
@@ -85,11 +68,7 @@ const BackgroundsElement = document.querySelectorAll(
 
 BackgroundsElement.forEach((span) => {
   span.addEventListener("click", function (e) {
-    BackgroundsElement.forEach((span) => {
-      span.classList.remove("active");
-    });
-
-    this.classList.add("active");
+    handleActive(e);
 
     if (e.target.dataset.background === "yes") {
       backgroundOption = true;
@@ -109,17 +88,6 @@ let landingPage = document.querySelector(".landing-page");
 let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 
 randomizeImgs();
-
-function randomizeImgs() {
-  if (backgroundOption) {
-    let length = 0;
-    backgroundInterval = setInterval(function () {
-      landingPage.style.backgroundImage = `url("../imgs/${imgsArray[length]}")`;
-      length++;
-      if (length === imgsArray.length) length = 0;
-    }, 10000);
-  }
-}
 
 // select skills selector
 let ourSkills = document.querySelector(".skills");
@@ -183,6 +151,16 @@ scrollToSomewhere(allBullets);
 // Select All Links
 // const allLinks = document.querySelectorAll(".links a");
 
+function randomizeImgs() {
+  if (backgroundOption) {
+    let length = 0;
+    backgroundInterval = setInterval(function () {
+      landingPage.style.backgroundImage = `url("../imgs/${imgsArray[length]}")`;
+      length++;
+      if (length === imgsArray.length) length = 0;
+    }, 10000);
+  }
+}
 function scrollToSomewhere(elements) {
   elements = document.querySelectorAll(".nav-bullets .bullet");
   elements.forEach((ele) => {
@@ -192,4 +170,11 @@ function scrollToSomewhere(elements) {
       });
     });
   });
+}
+function handleActive(ev) {
+  ev.target.parentElement.querySelectorAll(".active").forEach((ele) => {
+    ele.classList.remove("active");
+  });
+
+  ev.target.classList.add("active");
 }
