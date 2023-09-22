@@ -182,6 +182,16 @@ bulletsSpan.forEach((span) => {
   });
 });
 
+// Reset Button
+document.querySelector(".reset-options").onclick = function () {
+  // localStorage.clear();
+  localStorage.removeItem("color-option");
+  localStorage.removeItem("background-option");
+  localStorage.removeItem("bullets-option");
+
+  window.location.reload();
+};
+
 function randomizeImgs() {
   if (backgroundOption) {
     let length = 0;

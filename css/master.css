@@ -130,6 +130,22 @@ body {
 .settings-box .settings-container .option-box span.active {
   opacity: 1;
 }
+.settings-box .reset-options {
+  display: block;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  width: 168px;
+  margin: 30px auto;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
 /* End Settings Box */
 
 /* Start Nav Bullets */
