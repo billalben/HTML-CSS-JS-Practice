@@ -19,21 +19,20 @@ let backgroundInterval;
 
 // check if there is in local storage background item
 let backgroundLocalItem = localStorage.getItem("background-option");
+const backgroundYes = document.querySelector(".background-changes .yes");
+const backgroundNo = document.querySelector(".background-changes .no");
 
 if (backgroundLocalItem !== null) {
-  if (backgroundLocalItem === "true") {
-    backgroundOption = true;
-  } else {
-    backgroundOption = false;
-  }
   document.querySelectorAll(".background-changes span").forEach((element) => {
     element.classList.remove("active");
   });
 
   if (backgroundLocalItem === "true") {
-    document.querySelector(".background-changes .yes").classList.add("active");
+    backgroundYes.classList.add("active");
+    backgroundOption = true;
   } else {
-    document.querySelector(".background-changes .no").classList.add("active");
+    backgroundNo.classList.add("active");
+    backgroundOption = false;
   }
 }
 
@@ -83,9 +82,9 @@ BackgroundsElement.forEach((span) => {
 });
 
 // Select Landing Page Element
-let landingPage = document.querySelector(".landing-page");
+const landingPage = document.querySelector(".landing-page");
 
-let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
+const imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 
 randomizeImgs();
 
@@ -102,7 +101,7 @@ window.onscroll = function () {
 };
 
 // Create Popup With The Image
-let ourGallery = document.querySelectorAll(".gallery img");
+const ourGallery = document.querySelectorAll(".gallery img");
 
 ourGallery.forEach((img) => {
   img.addEventListener("click", (e) => {
@@ -150,6 +149,38 @@ scrollToSomewhere(allBullets);
 
 // Select All Links
 // const allLinks = document.querySelectorAll(".links a");
+
+const bulletsSpan = document.querySelectorAll(".bullets-options span");
+const bulletsContainer = document.querySelector(".nav-bullets");
+let bulletLocalItem = localStorage.getItem("bullets-option");
+
+if (bulletLocalItem !== null) {
+  bulletsSpan.forEach((span) => {
+    span.classList.remove("active");
+  });
+
+  if (bulletLocalItem === "block") {
+    bulletsContainer.style.display = "block";
+    document.querySelector(".bullets-options .yes").classList.add("active");
+  } else {
+    bulletsContainer.style.display = "none";
+    document.querySelector(".bullets-options .no").classList.add("active");
+  }
+}
+
+bulletsSpan.forEach((span) => {
+  span.addEventListener("click", (e) => {
+    if (span.dataset.display === "block") {
+      bulletsContainer.style.display = "block";
+      localStorage.setItem("bullets-option", "block");
+    } else {
+      bulletsContainer.style.display = "none";
+      localStorage.setItem("bullets-option", "none");
+    }
+
+    handleActive(e);
+  });
+});
 
 function randomizeImgs() {
   if (backgroundOption) {
