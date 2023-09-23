@@ -43,9 +43,7 @@
             <span class="no" data-display="none">No</span>
           </div>
         </div>
-        <button class="reset-options">
-          Reset Options
-        </button>
+        <button class="reset-options">Reset Options</button>
       </div>
     </div>
     <!-- End Settings Box -->
@@ -79,16 +77,23 @@
       <div class="container">
         <div class="header-area">
           <div class="logo">Special Design</div>
-          <ul class="links">
-            <li>
-              <a href="#about" class="active" data-section=".skills">About</a>
-            </li>
-            <li><a href="#skills" data-section=".skills">Skills</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-          </ul>
+          <div class="links-container">
+            <ul class="links">
+              <li>
+                <a href="#about" class="active" data-section=".skills">About</a>
+              </li>
+              <li><a href="#skills" data-section=".skills">Skills</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#timeline">Timeline</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            <button class="toggle-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </div>
       <div class="introduction-text">
@@ -325,14 +330,25 @@
         <h2>Contact Us</h2>
         <form action="">
           <div class="left">
-            <input type="text" placeholder="Your Name" name="username" maxlength="30" required>
-            <input type="number" placeholder="Your Phone" name="phone">
-            <input type="email" placeholder="Your Email" name="email" required>
-            <input type="text" placeholder="Subject" name="subject">
+            <input
+              type="text"
+              placeholder="Your Name"
+              name="username"
+              maxlength="30"
+              required
+            />
+            <input type="number" placeholder="Your Phone" name="phone" />
+            <input
+              type="email"
+              placeholder="Your Email"
+              name="email"
+              required
+            />
+            <input type="text" placeholder="Subject" name="subject" />
           </div>
           <div class="right">
             <textarea name="message" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send">
+            <input type="submit" value="Send" />
           </div>
         </form>
       </div>

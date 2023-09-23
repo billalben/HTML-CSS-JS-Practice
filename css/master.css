@@ -12,7 +12,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 .container {
-  width: 1170px;
   padding-left: 15px;
   padding-right: 15px;
   margin: auto;
@@ -256,11 +255,14 @@ body {
   padding: 15px;
   font-weight: bold;
 }
-.landing-page .header-area .links {
-  list-style: none;
-  padding: 0;
+.header-area .links-container {
   width: 100%;
   text-align: right;
+}
+.landing-page .header-area .links {
+  list-style: none;
+  text-align: right;
+  padding: 0;
 }
 .landing-page .header-area .links li {
   display: inline-block;
@@ -278,6 +280,23 @@ body {
 .landing-page .header-area .links li a.active,
 .landing-page .header-area .links li a:hover {
   color: var(--main-color);
+}
+.header-area .toggle-menu {
+  background: none;
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: none;
+}
+.header-area .toggle-menu:focus {
+  outline: none;
+}
+.header-area .toggle-menu span {
+  display: block;
+  background-color: #fff;
+  height: 3px;
+  margin-bottom: 5px;
 }
 .landing-page .introduction-text {
   position: absolute;
@@ -304,6 +323,14 @@ body {
   line-height: 1.6;
   font-size: 20px;
   margin: 0;
+}
+@media (max-width: 991px) {
+  .header-area .links {
+    display: none;
+  }
+  .header-area .toggle-menu {
+    display: inline-block;
+  }
 }
 /* End Landing Page */
 
