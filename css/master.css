@@ -293,7 +293,7 @@ body {
 .header-area .toggle-menu:focus {
   outline: none;
 }
-.header-area .toggle-menu::before {
+.header-area .toggle-menu.menu-active::before {
   content: "";
   border-width: 15px;
   border-color: transparent transparent #fff transparent;

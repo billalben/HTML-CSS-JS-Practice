@@ -192,6 +192,35 @@ document.querySelector(".reset-options").onclick = function () {
   window.location.reload();
 };
 
+// Toggle Menu
+const toggleBtn = document.querySelector(".toggle-menu");
+const tLinks = document.querySelector(".header-area .links");
+
+toggleBtn.onclick = function (e) {
+  // Stop Propagation
+  e.stopPropagation();
+
+  this.classList.toggle("menu-active");
+  tLinks.classList.toggle("open");
+}
+
+tLinks.onclick = function (e) {
+  e.stopPropagation();
+}
+
+// Click Anywhere Outside Menu And Toggle Button
+document.addEventListener("click", (e) => {
+  if (e.target !== toggleBtn && e.target !== tLinks) {
+
+    // Check If Menu Is Open
+    if (tLinks.classList.contains("open")) {
+      tLinks.classList.remove("open");
+      toggleBtn.classList.remove("menu-active");
+    }
+  }
+})
+
+
 function randomizeImgs() {
   if (backgroundOption) {
     let length = 0;
