@@ -37,10 +37,11 @@ if (backgroundLocalItem !== null) {
 }
 
 // Toggle Spin Class On Icon
+const settingsBox = document.querySelector(".settings-box");
 document.querySelector(".toggle-settings i").onclick = function () {
   this.classList.toggle("fa-spin");
 
-  document.querySelector(".settings-box").classList.toggle("open");
+  settingsBox.classList.toggle("open");
 };
 
 // Switch Colors
@@ -202,24 +203,26 @@ toggleBtn.onclick = function (e) {
 
   this.classList.toggle("menu-active");
   tLinks.classList.toggle("open");
-}
+
+  if (settingsBox.classList.contains("open")) {
+    settingsBox.classList.remove("open");
+  }
+};
 
 tLinks.onclick = function (e) {
   e.stopPropagation();
-}
+};
 
 // Click Anywhere Outside Menu And Toggle Button
 document.addEventListener("click", (e) => {
   if (e.target !== toggleBtn && e.target !== tLinks) {
-
     // Check If Menu Is Open
     if (tLinks.classList.contains("open")) {
       tLinks.classList.remove("open");
       toggleBtn.classList.remove("menu-active");
     }
   }
-})
-
+});
 
 function randomizeImgs() {
   if (backgroundOption) {

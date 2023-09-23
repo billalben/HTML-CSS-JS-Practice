@@ -25,7 +25,7 @@ body {
   border-right: 2px solid var(--main-color);
   width: 250px;
   min-height: 100vh;
-  z-index: 10;
+  z-index: 11;
   transition: left 0.3s;
   -webkit-transition: left 0.3s;
   -moz-transition: left 0.3s;
@@ -899,6 +899,15 @@ body {
   -o-transition: 0.5s;
 }
 /* End Contact Us */
+
+/* Start Footer */
+.footer {
+  background-color: #333;
+  color: #eee;
+  padding: 20px;
+  text-align: center;
+}
+/* End Footer */
 
 /* Start Grid System */
 @media (min-width: 576px) {
